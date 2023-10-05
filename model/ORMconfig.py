@@ -32,10 +32,12 @@ class Cars(Base):
     id = Column("id", Integer, primary_key=True, autoincrement=True)
     model = Column("model", String(30))
     manufacturer = Column("manufacturer", String(30))
+    externalCode = Column("externalCode", String(10))
 
-    def __init__(self, model: str, manufacturer: str, **kw: Any):
+    def __init__(self, model: str, externalCode: str, manufacturer: str, **kw: Any):
         super().__init__(**kw)
         self.model = model
+        self.externalCode = externalCode
         self.manufacturer = manufacturer
 
 
